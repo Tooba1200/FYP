@@ -7,9 +7,17 @@ import StepPersonal from "@/app/register/components/ui/StepPersonal";
 import StepCompany from "@/app/register/components/ui/StepCompany";
 import StepServices from "@/app/register/components/ui/StepServices";
 import StepAbout from "@/app/register/components/ui/StepAbout";
+import StepAuthentication from "./components/ui/StepAuthentication";
+import StepFactoryImages from "./components/ui/StepFactoryImages";
 
 export default function RegisterPage() {
   const [step, setStep] = useState(0);
+  const [personalForm, setPersonalForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "+92", 
+  });
 
   const nextStep = () => setStep((prev) => Math.min(prev + 1, steps.length - 1));
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 0));
@@ -17,13 +25,17 @@ export default function RegisterPage() {
   const renderStep = () => {
     switch (step) {
       case 0:
-        return <StepPersonal nextStep={nextStep} />;
+        return <StepPersonal nextStep={nextStep} form={personalForm} setForm={setPersonalForm} />;
       case 1:
         return <StepCompany nextStep={nextStep} prevStep={prevStep} />;
       case 2:
         return <StepServices nextStep={nextStep} prevStep={prevStep} />;
       case 3:
         return <StepAbout nextStep={nextStep} prevStep={prevStep} />;
+      case 4:
+        return <StepAuthentication nextStep={nextStep} prevStep={prevStep} phone={personalForm.phone} />;
+      case 5:
+        return <StepFactoryImages nextStep={nextStep} prevStep={prevStep}/>;
       default:
         return <p>No step matched</p>;
     }

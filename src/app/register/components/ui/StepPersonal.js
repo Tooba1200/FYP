@@ -6,14 +6,8 @@ import { Label } from "@/components/ui/label";
 import Header from "@/app/register/components/ui/header";
 import { ArrowRight } from "lucide-react";
 
-export default function StepPersonal({ nextStep, prevStep }) {
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "+92", // ✅ starts with +92
-    cnic: "",
-  });
+export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
+  
   const [touched, setTouched] = useState({});
 
   // ✅ Validation Functions

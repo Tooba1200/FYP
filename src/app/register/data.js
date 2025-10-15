@@ -21,5 +21,6 @@ export const steps = [
   { label: "Company Details", icon: "mdi:company" },
   { label: "Services", icon: "icons8:services" },
   { label: "Who you are", icon: "ix:about" },
+  { label: "Authentication", icon: "mdi:security-account" },
   { label: "Factory Interior images", icon: "ion:images-outline" },
 ];

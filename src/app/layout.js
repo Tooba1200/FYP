@@ -1,3 +1,5 @@
+
+
 import { Inter } from "next/font/google"; // ✅ 'Inter' capital I se
 import "./globals.css";
 

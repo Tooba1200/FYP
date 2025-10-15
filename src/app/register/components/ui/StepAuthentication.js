@@ -153,7 +153,7 @@ export default function StepAuthentication({ nextStep, prevStep }) {
       </div>
 
       {/* Bottom Buttons */}
-      <div className="w-full flex max-w-2xl mx-auto justify-between pb-5 px-4">
+      <div className="w-full flex max-w-2xl mx-auto justify-between pb-5">
         <Button
           onClick={prevStep}
           variant="outline"

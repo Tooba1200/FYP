@@ -49,7 +49,7 @@ export default function RegisterPage() {
       </div>
 
       {/* ✅ Step content (moves independently) */}
-      <div className="flex-1 md:ml-64 flex flex-col items-center justify-center px-6 ">
+      <div className="flex-1 md:ml-64 flex flex-col items-center justify-center px-6  ">
         {renderStep()}
       </div>
     </div>

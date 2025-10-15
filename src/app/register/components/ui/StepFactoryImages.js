@@ -37,7 +37,7 @@ export default function StepFactoryImages({ nextStep, prevStep, setForm }) {
       {/* === Middle: Image Upload Boxes === */}
       <div className="w-full max-w-2xl mx-auto mt-5 flex-1 space-y-6 ">
         {/* Top-right: Circular + button */}
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-12">
           <Button
             onClick={addImageSlot}
             className="bg-[#2D464C] text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl"
@@ -79,7 +79,7 @@ export default function StepFactoryImages({ nextStep, prevStep, setForm }) {
       </div>
 
       {/* === Bottom Navigation Buttons === */}
-      <div className="flex justify-between w-full max-w-3xl mt-8 pb-5">
+      <div className="flex justify-between w-full max-w-2xl mt-8 pb-5">
         <Button
           variant="outline"
           onClick={prevStep}

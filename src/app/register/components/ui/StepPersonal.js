@@ -168,7 +168,7 @@ export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
         </div>
 
         {/* === Next Button === */}
-        <div className="flex justify-end pt-6">
+        <div className="w-full flex justify-end pt-10">
           <Button
             disabled={!allValid}
             className={`w-full sm:w-auto px-10 py-3 rounded-xl text-lg font-medium transition-all ${

@@ -39,7 +39,7 @@ export default function StepAbout({ nextStep, prevStep }) {
       </div>
 
       {/* === Buttons (Fixed at Bottom, Same Design) === */}
-      <div className="w-full max-w-2xl mx-auto flex justify-between px-6 py-4  sticky bottom-0 bg-white">
+      <div className="w-full max-w-2xl mx-auto flex justify-between  py-4  sticky bottom-0 ">
         <Button
           variant="outline"
           className="border-[#2D464C] text-[#2D464C]"

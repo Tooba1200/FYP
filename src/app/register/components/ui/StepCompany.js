@@ -206,7 +206,7 @@ export default function StepCompany({ nextStep, prevStep }) {
         </div>
 
         {/* === Buttons === */}
-        <div className="flex justify-between pt-6">
+        <div className="flex justify-between pt-6 ">
           <Button
             variant="outline"
             className="border-[#2D464C] text-[#2D464C]"
@@ -216,7 +216,9 @@ export default function StepCompany({ nextStep, prevStep }) {
           </Button>
           <Button
             disabled={!allValid}
-            className={`px-10 py-3 rounded-xl text-lg font-medium transition-all ${
+    
+            className={`w-full sm:w-auto px-10 py-3 rounded-xl text-lg font-medium transition-all ${
+
               allValid
                 ? "bg-[#2D464C] hover:bg-[#243b40] text-white"
                 : "bg-gray-300 text-gray-500 cursor-not-allowed"

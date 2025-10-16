@@ -20,12 +20,8 @@ export default function Sidebar({ step }) {
 
           return (
             <div key={index} className="relative flex items-start space-x-3">
-              {/* 🔹 Line ABOVE the icon */}
-             
-
-              {/* 🔹 Icon + Label */}
               <div className="flex items-center space-x-3 relative z-10">
-                {/* Circle background for icon */}
+               
                 <div>
                   <Icon
                     icon={item.icon}
@@ -42,7 +38,7 @@ export default function Sidebar({ step }) {
                 </div>
 
                 <span
-                  className={`text-sm  ${
+                  className={`text-[14]  ${
                     isActive
                       ? "text-white"
                       : isCompleted
@@ -54,7 +50,7 @@ export default function Sidebar({ step }) {
                 </span>
               </div>
 
-              {/* 🔹 Line BELOW the icon */}
+             
               {!isLast && (
                 <div
                   className={`absolute left-[11px] top-[28px] w-[2px] h-8  ${

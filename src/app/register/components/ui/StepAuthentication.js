@@ -61,16 +61,16 @@ export default function StepAuthentication({ nextStep, prevStep }) {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
-      {/* Header */}
+    <div className="w-full min-h-screen flex flex-col items-center">
+      {/* === Top Logo === */}
       <Header />
 
-      {/* Center Box */}
-      <div className="flex-1 flex justify-center items-center ">
+      {/* === Form Card === */}
+      <div className="w-full max-w-2xl space-y-6 mt-5  min-h-120 relative">
         <div className="w-full max-w-2xl space-y-4">
           {/* Password Field */}
           <div className="flex flex-col space-y-1 relative">
-            <Label className="text-[#2D464C] text-[18px] font-medium text-center">
+            <Label className="text-[#2D464C] text-[16px] font-medium text-center">
               Password
             </Label>
             <div className="relative">
@@ -95,13 +95,12 @@ export default function StepAuthentication({ nextStep, prevStep }) {
             {/* Fixed space for strength (left) and instructions (right) */}
             <div className="h-6 flex justify-between items-center px-1 text-sm">
               <span
-                className={`${
-                  getPasswordStrength(form.password) === "Weak"
+                className={`${getPasswordStrength(form.password) === "Weak"
                     ? "text-red-500"
                     : getPasswordStrength(form.password) === "Normal"
-                    ? "text-yellow-500"
-                    : "text-green-500"
-                }`}
+                      ? "text-yellow-500"
+                      : "text-green-500"
+                  }`}
               >
                 {form.password ? `Strength: ${getPasswordStrength(form.password)}` : ""}
               </span>
@@ -115,7 +114,7 @@ export default function StepAuthentication({ nextStep, prevStep }) {
 
           {/* Confirm Password Field */}
           <div className="flex flex-col space-y-1 relative">
-            <Label className="text-[#2D464C] text-[18px] font-medium text-center">
+            <Label className="text-[#2D464C] text-[16px] font-medium text-center">
               Confirm Password
             </Label>
             <div className="relative">
@@ -127,11 +126,10 @@ export default function StepAuthentication({ nextStep, prevStep }) {
                   setForm({ ...form, confirmPassword: e.target.value })
                 }
                 disabled={!isPasswordValid(form.password)}
-                className={`w-full py-3 text-[16px] rounded-sm focus:ring-2 focus:ring-[#2D464C] pr-10 ${
-                  !isPasswordValid(form.password)
+                className={`w-full py-3 text-[16px] rounded-sm focus:ring-2 focus:ring-[#2D464C] pr-10 ${!isPasswordValid(form.password)
                     ? "bg-gray-100 cursor-not-allowed"
                     : ""
-                }`}
+                  }`}
               />
               <button
                 type="button"
@@ -150,10 +148,10 @@ export default function StepAuthentication({ nextStep, prevStep }) {
           {/* General Error */}
           <div className="h-6 text-center text-red-500">{error}</div>
         </div>
-      </div>
+      
 
       {/* Bottom Buttons */}
-      <div className="w-full flex max-w-2xl mx-auto justify-between pb-5">
+      <div className="w-full flex max-w-2xl mx-auto justify-between absolute bottom-0">
         <Button
           onClick={prevStep}
           variant="outline"
@@ -165,14 +163,14 @@ export default function StepAuthentication({ nextStep, prevStep }) {
         <Button
           disabled={!allValid}
           onClick={handleNext}
-          className={`flex items-center gap-2 px-8 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${
-            allValid
+          className={`flex items-center gap-2 px-8 py-3 rounded-xl text-lg font-medium transition-all duration-300 ${allValid
               ? "bg-[#2D464C] hover:bg-[#243b40] text-white"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
-          }`}
+            }`}
         >
           <ArrowRight />
         </Button>
+      </div>
       </div>
     </div>
   );

@@ -37,77 +37,68 @@ export default function StepCompany({ nextStep, prevStep }) {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center pb-5">
+    <div className="w-full min-h-screen flex flex-col items-center">
       {/* === Top Logo === */}
       <Header />
 
-      {/* === Form === */}
-      <div className="w-full max-w-2xl space-y-6 mt-5 ">
-    
-        {/* === Company Info Row === */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-6">
-          {/* Left: Company Name + Location */}
-          <div className="flex-1 space-y-4 w-full">
+      {/* === Form Card === */}
+      <div className="w-full max-w-2xl  mt-5 space-y-5 ">
+        <div className="flex justify-between items-start w-full gap-5  ">
+          {/* === Left Side: Company + Location === */}
+          <div className="flex-1 ">
             {/* Company Name */}
-            <div>
-              <Label className="text-[#2D464C] text-[18px] font-medium">
-                Company Name
-              </Label>
-              <Input
-                placeholder="Enter full company name"
-                value={form.companyName}
-                onBlur={() => setTouched({ ...touched, companyName: true })}
-                onChange={(e) =>
-                  setForm({ ...form, companyName: e.target.value })
-                }
-                className={`mt-2 py-5 text-[16px] rounded-sm focus:ring-2 ${
-                  touched.companyName && !isCompanyValid
-                    ? "border-red-500 focus:ring-red-400"
-                    : "border-gray-300 focus:ring-[#2D464C]"
+            <Label className="text-[#2D464C] text-[16px] font-medium">
+              Company Name
+            </Label>
+            <Input
+              placeholder="Enter full company name"
+              value={form.companyName}
+              onBlur={() => setTouched({ ...touched, companyName: true })}
+              onChange={(e) =>
+                setForm({ ...form, companyName: e.target.value })
+              }
+              className={`mt-2 py-5 text-[16px] rounded-sm focus:ring-2 ${touched.companyName && !isCompanyValid
+                  ? "border-red-500 focus:ring-red-400"
+                  : "border-gray-300 focus:ring-[#2D464C]"
                 }`}
-              />
-              {touched.companyName && !isCompanyValid && (
-                <p className="text-red-500 text-sm mt-1">
-                  Company name must be at least 2 characters long.
-                </p>
-              )}
-            </div>
+            />
+            {touched.companyName && !isCompanyValid && (
+              <p className="text-red-500 text-sm mt-1">
+                Company name must be at least 2 characters long.
+              </p>
+            )}
 
             {/* Location */}
-            <div>
-              <Label className="text-[#2D464C] text-[18px] font-medium">
-                Enter Location
-              </Label>
-              <Input
-                placeholder="Enter location"
-                value={form.location}
-                onBlur={() => setTouched({ ...touched, location: true })}
-                onChange={(e) => setForm({ ...form, location: e.target.value })}
-                className={`mt-2 py-5 text-[16px] rounded-sm focus:ring-2 ${
-                  touched.location && !isLocationValid
-                    ? "border-red-500 focus:ring-red-400"
-                    : "border-gray-300 focus:ring-[#2D464C]"
+            <Label className="text-[#2D464C] text-[16px] font-medium  block mt-5">
+              Enter Location
+            </Label>
+            <Input
+              placeholder="Enter location"
+              value={form.location}
+              onBlur={() => setTouched({ ...touched, location: true })}
+              onChange={(e) => setForm({ ...form, location: e.target.value })}
+              className={`mt-2 py-5 text-[16px] rounded-sm focus:ring-2 ${touched.location && !isLocationValid
+                  ? "border-red-500 focus:ring-red-400"
+                  : "border-gray-300 focus:ring-[#2D464C]"
                 }`}
-              />
-              {touched.location && !isLocationValid && (
-                <p className="text-red-500 text-sm mt-1">
-                  Please enter a valid location.
-                </p>
-              )}
-            </div>
+            />
+            {touched.location && !isLocationValid && (
+              <p className="text-red-500 text-sm mt-1">
+                Please enter a valid location.
+              </p>
+            )}
           </div>
 
-          {/* Right: Upload Logo */}
-          <div className="w-full md:w-1/4 flex flex-col items-center">
-          
-            <div className="relative w-40 h-33 mt-9 border-2 border-dashed border-gray-300 rounded-lg flex flex-col justify-center items-center cursor-pointer hover:border-[#2D464C] transition">
+          {/* === Right Side: Logo Upload === */}
+          <div className="w-40 flex justify-center">
+            <div className="relative w-full h-40 mt-2 border-2 border-dashed border-gray-300 rounded-lg flex flex-col justify-center items-center cursor-pointer hover:border-[#2D464C] transition">
               <input
                 type="file"
                 accept="image/*"
                 onChange={(e) => handleFileChange(e, "logo")}
                 className="absolute inset-0 opacity-0 cursor-pointer"
               />
-              <span className="text-sm text-gray-500">  Upload Logo Pic</span>
+              <span className="text-sm text-gray-500">Upload Logo</span>
               {form.logo && (
                 <p className="text-xs text-[#2D464C] mt-2 font-medium">
                   ✅ {form.logo.name}
@@ -116,11 +107,10 @@ export default function StepCompany({ nextStep, prevStep }) {
             </div>
           </div>
         </div>
-
         {/* === Country & City (Fixed) === */}
         <div className="flex flex-col md:flex-row gap-4">
           <div className="w-full md:w-1/2">
-            <Label className="text-[#2D464C] text-[18px] font-medium">
+            <Label className="text-[#2D464C] text-[16px] font-medium">
               Country
             </Label>
             <Select
@@ -131,7 +121,7 @@ export default function StepCompany({ nextStep, prevStep }) {
           </div>
 
           <div className="w-full md:w-1/2">
-            <Label className="text-[#2D464C] text-[18px] font-medium">
+            <Label className="text-[#2D464C] text-[16px] font-medium">
               City
             </Label>
             <Select
@@ -144,7 +134,7 @@ export default function StepCompany({ nextStep, prevStep }) {
 
         {/* === Website === */}
         <div>
-          <Label className="text-[#2D464C] text-[18px] font-medium">
+          <Label className="text-[#2D464C] text-[16px] font-medium">
             Website Link
           </Label>
           <Input
@@ -152,11 +142,10 @@ export default function StepCompany({ nextStep, prevStep }) {
             value={form.website}
             onBlur={() => setTouched({ ...touched, website: true })}
             onChange={(e) => setForm({ ...form, website: e.target.value })}
-            className={`mt-2 py-5 text-[16px] rounded-sm focus:ring-2 ${
-              touched.website && !isWebsiteValid
-                ? "border-red-500 focus:ring-red-400"
-                : "border-gray-300 focus:ring-[#2D464C]"
-            }`}
+            className={`mt-2 py-5 text-[16px] rounded-sm focus:ring-2 ${touched.website && !isWebsiteValid
+              ? "border-red-500 focus:ring-red-400"
+              : "border-gray-300 focus:ring-[#2D464C]"
+              }`}
           />
           {touched.website && !isWebsiteValid && (
             <p className="text-red-500 text-sm mt-1">
@@ -206,7 +195,7 @@ export default function StepCompany({ nextStep, prevStep }) {
         </div>
 
         {/* === Buttons === */}
-        <div className="flex justify-between pt-6 ">
+        <div className="flex justify-between mb-5">
           <Button
             variant="outline"
             className="border-[#2D464C] text-[#2D464C]"
@@ -216,19 +205,18 @@ export default function StepCompany({ nextStep, prevStep }) {
           </Button>
           <Button
             disabled={!allValid}
-    
-            className={`w-full sm:w-auto px-10 py-3 rounded-xl text-lg font-medium transition-all ${
 
-              allValid
-                ? "bg-[#2D464C] hover:bg-[#243b40] text-white"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-            }`}
+            className={`w-full sm:w-auto px-10 py-3 rounded-xl text-lg font-medium transition-all ${allValid
+              ? "bg-[#2D464C] hover:bg-[#243b40] text-white"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
             onClick={nextStep}
           >
             <ArrowRight />
           </Button>
         </div>
       </div>
+
     </div>
   );
 }

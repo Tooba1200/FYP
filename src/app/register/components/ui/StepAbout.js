@@ -12,13 +12,14 @@ export default function StepAbout({ nextStep, prevStep }) {
   const allValid = isValid;
 
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col items-center ">
       {/* === Top Logo === */}
       <Header />
 
-      {/* === About Box === */}
-      <div className="flex-1 w-full max-w-2xl mx-auto mt-5">
-        <Label className="text-[#2D464C] text-[18px] font-medium">
+      {/* === Form Card === */}
+      <div className="w-full max-w-2xl  mt-5  min-h-120 relative">
+
+        <Label className="text-[#2D464C] text-[16px] font-medium">
           About
         </Label>
         <textarea
@@ -36,29 +37,29 @@ export default function StepAbout({ nextStep, prevStep }) {
             Please enter at least 10 characters
           </p>
         )}
-      </div>
 
-      {/* === Buttons (Fixed at Bottom, Same Design) === */}
-      <div className="w-full max-w-2xl mx-auto flex justify-between  py-4  sticky bottom-0 ">
-        <Button
-          variant="outline"
-          className="border-[#2D464C] text-[#2D464C]"
-          onClick={prevStep}
-        >
-          <ArrowLeft />
-        </Button>
-        <Button
-          disabled={!allValid}
-          className={`px-10 py-3 rounded-xl text-lg font-medium transition-all ${allValid
+
+        {/* === Buttons (Fixed at Bottom, Same Design) === */}
+        <div className="w-full max-w-2xl mx-auto flex justify-between absolute bottom-0 ">
+          <Button
+            variant="outline"
+            className="border-[#2D464C] text-[#2D464C]"
+            onClick={prevStep}
+          >
+            <ArrowLeft />
+          </Button>
+          <Button
+            disabled={!allValid}
+            className={`px-10 py-3 rounded-xl text-lg font-medium transition-all ${allValid
               ? "bg-[#2D464C] hover:bg-[#243b40] text-white"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
-            }`}
-          onClick={nextStep}
-        >
-          <ArrowRight />
-        </Button>
+              }`}
+            onClick={nextStep}
+          >
+            <ArrowRight />
+          </Button>
+        </div>
       </div>
-
     </div>
   );
 }

@@ -40,16 +40,16 @@ export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center">
+    <div className="w-full min-h-screen flex flex-col items-center ">
       {/* === Top Logo === */}
       <Header />
 
       {/* === Form Card === */}
-      <div className="w-full max-w-2xl space-y-6 mt-5">
-        <div className="space-y-6">
+      <div className="w-full max-w-2xl space-y-6 mt-5 min-h-120 relative ">
+        <div className="space-y-6 ">
           {/* === Name Fields === */}
           <div>
-            <Label className="text-[#2D464C] text-[18px] font-medium">
+            <Label className="text-[#2D464C] text-[16px] font-medium">
               Name
             </Label>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -61,7 +61,7 @@ export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
                 onChange={(e) =>
                   setForm({ ...form, firstName: e.target.value })
                 }
-                className={`py-5 text-[16px] rounded-sm focus:ring-2 ${
+                className={`py-5 text-[14px] rounded-sm focus:ring-2 ${
                   touched.firstName && form.firstName.trim().length < 2
                     ? "border-red-500 focus:ring-red-400"
                     : "border-gray-300 focus:ring-[#2D464C]"
@@ -92,7 +92,7 @@ export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
 
           {/* === Email === */}
           <div>
-            <Label className="text-[#2D464C] text-[18px] font-medium">
+            <Label className="text-[#2D464C] text-[16px] font-medium">
               Email Address
             </Label>
             <Input
@@ -116,7 +116,7 @@ export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
 
           {/* === Phone Number === */}
           <div>
-            <Label className="text-[#2D464C] text-[18px] font-medium">
+            <Label className="text-[#2D464C] text-[16px] font-medium">
               Phone No
             </Label>
             <Input
@@ -139,7 +139,7 @@ export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
 
           {/* === CNIC === */}
           <div>
-            <Label className="text-[#2D464C] text-[18px] font-medium">
+            <Label className="text-[#2D464C] text-[16px] font-medium">
               CNIC
             </Label>
             <Input
@@ -168,7 +168,7 @@ export default function StepPersonal({ nextStep, prevStep,form,setForm }) {
         </div>
 
         {/* === Next Button === */}
-        <div className="w-full flex justify-end pt-10">
+        <div className="w-full flex justify-end absolute bottom-0">
           <Button
             disabled={!allValid}
             className={`w-full sm:w-auto px-10 py-3 rounded-xl text-lg font-medium transition-all ${

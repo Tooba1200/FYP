@@ -30,14 +30,14 @@ export default function StepFactoryImages({ nextStep, prevStep, setForm }) {
   };
 
   return (
-   <div className="w-full min-h-screen flex flex-col items-center">
+    <div className="w-full min-h-screen flex flex-col items-center">
       {/* === Top Logo === */}
       <Header />
 
-      {/* === Middle: Image Upload Boxes === */}
-      <div className="w-full max-w-2xl mx-auto mt-5 flex-1 space-y-6 ">
+      {/* === Form Card === */}
+      <div className="w-full max-w-2xl space-y-6 mt-5 min-h-120 relative">
         {/* Top-right: Circular + button */}
-        <div className="flex justify-end mt-12">
+        <div className="flex justify-end">
           <Button
             onClick={addImageSlot}
             className="bg-[#2D464C] text-white rounded-full w-12 h-12 flex items-center justify-center text-2xl"
@@ -47,14 +47,14 @@ export default function StepFactoryImages({ nextStep, prevStep, setForm }) {
         </div>
 
         {/* Grid of 2 columns */}
-        <div className="grid grid-cols-2 ">
+        <div className="grid grid-cols-2 gap-4 h-85 overflow-y-auto overflow-x-hidden pr-2 ">
           {images.map((img, index) => (
             <div key={index} className="relative">
               {/* Delete X button */}
               {images.length > 2 && (
                 <button
                   onClick={() => removeImage(index)}
-                  className="absolute top-2 right-16 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+                  className="absolute top-2 right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
                 >
                   <X size={14} />
                 </button>
@@ -62,7 +62,7 @@ export default function StepFactoryImages({ nextStep, prevStep, setForm }) {
 
               <label
                 htmlFor={`factoryImage-${index}`}
-                className="w-70 h-40 mb-15 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-[#2D464C] text-center"
+                className="w-80 h-40 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-[#2D464C] text-center"
               >
                 {img.file ? img.file.name : "Upload Image"}
               </label>
@@ -76,10 +76,10 @@ export default function StepFactoryImages({ nextStep, prevStep, setForm }) {
             </div>
           ))}
         </div>
-      </div>
+     
 
       {/* === Bottom Navigation Buttons === */}
-      <div className="flex justify-between w-full max-w-2xl mt-8 pb-5">
+      <div className="flex justify-between w-full max-w-2xl absolute bottom-0">
         <Button
           variant="outline"
           onClick={prevStep}
@@ -96,5 +96,6 @@ export default function StepFactoryImages({ nextStep, prevStep, setForm }) {
         </Button>
       </div>
     </div>
+     </div>
   );
 }

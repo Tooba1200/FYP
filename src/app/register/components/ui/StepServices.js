@@ -46,12 +46,12 @@ export default function StepServices({ nextStep, prevStep }) {
             <Plus size={28} />
           </Button>
         </div>
-        <div className="  h-85 overflow-y-auto overflow-x-hidden ">
+        <div className="  h-85 overflow-y-auto overflow-x-hidden">
           {/* === Service Rows === */}
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row gap-3 rounded-xl relative mb-20"
+              className="flex flex-col md:flex-row gap-3 rounded-xl relative mb-20  "
             >
               {/* 🗑 Delete Icon (Top Right Corner) */}
               {services.length > 1 && (
@@ -65,10 +65,10 @@ export default function StepServices({ nextStep, prevStep }) {
               )}
 
               {/* 📸 Image Upload */}
-              <div className="w-full md:w-35 flex flex-col items-center">
+              <div className="w-full md:w-35 flex flex-col items-center ">
                 <label
                   htmlFor={`serviceImage-${index}`}
-                  className="w-35 h-32 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-[#2D464C] text-center"
+                  className="w-35 h-30 mt-1 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-[#2D464C] text-center"
                 >
                   {service.image ? service.image.name : "Upload Image"}
                 </label>

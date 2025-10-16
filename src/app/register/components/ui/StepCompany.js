@@ -42,7 +42,7 @@ export default function StepCompany({ nextStep, prevStep }) {
       <Header />
 
       {/* === Form Card === */}
-      <div className="w-full max-w-2xl  mt-5 space-y-5 ">
+      <div className="w-full max-w-2xl  mt-5 space-y-5  ">
         <div className="flex justify-between items-start w-full gap-5  ">
           {/* === Left Side: Company + Location === */}
           <div className="flex-1 ">

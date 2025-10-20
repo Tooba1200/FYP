@@ -6,15 +6,8 @@ import { Label } from "@/components/ui/label";
 import Header from "@/app/register/components/ui/header";
 import { ArrowLeft, ArrowRight, Eye, EyeOff } from "lucide-react";
 
-export default function StepAuthentication({ nextStep, prevStep }) {
-  const [form, setForm] = useState({
-    password: "",
-    confirmPassword: "",
-  });
-
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
-  const [error, setError] = useState("");
+export default function StepAuthentication({ nextStep, prevStep,form, setForm,showPassword,setShowPassword,showConfirm,setShowConfirm,error,setError }) {
+  
 
   // Password validation function
   const isPasswordValid = (password) => {

@@ -1,7 +1,7 @@
 
-
 import { Inter } from "next/font/google"; // ✅ 'Inter' capital I se
 import "./globals.css";
+import { RegFormProvider } from "./usestate";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,8 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
+       <RegFormProvider>
         {children}
-        
+        </RegFormProvider> 
       </body>
     </html>
   );

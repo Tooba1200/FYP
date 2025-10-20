@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import { steps } from "@/app/register/data";
 
 export default function Sidebar({ step }) {
+  console.log("sidebaar = ",{step})
   return (
     <aside className="bg-[#2D464C] text-white min-h-screen w-65 flex flex-col p-6">
       {/* Header */}

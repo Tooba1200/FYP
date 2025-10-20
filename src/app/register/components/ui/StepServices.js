@@ -5,9 +5,8 @@ import { Label } from "@/components/ui/label";
 import Header from "@/app/register/components/ui/header";
 import { ArrowLeft, ArrowRight, Plus, X } from "lucide-react";
 
-export default function StepServices({ nextStep, prevStep }) {
-  const [services, setServices] = useState([{ name: "", price: "", image: null }]);
-
+export default function StepServices({ nextStep, prevStep,services, setServices }) {
+  
   const addService = () =>
     setServices([...services, { name: "", price: "", image: null }]);
 

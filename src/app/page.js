@@ -1,20 +1,41 @@
-import Link from "next/link";
+"use client";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-export default function HomePage() {
+export default function RegisterPage()
+ {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-50 text-center">
-      <h1 className="text-4xl font-bold mb-4">Welcome to My Next.js App 🚀</h1>
-      <p className="text-gray-600 mb-8">
-        Click below to start your registration process.
-      </p>
+    <div className="flex items-center justify-center min-h-screen text-gray-900">
+      <div className="bg-white py-5 px-2 shadow-[0_0_8px_rgba(0,0,0,0.3)] mb-3 rounded-lg">
+        <Image
+          src="/PHOTO-2025-09-30-21-49-13.jpg"
+          alt="IndusLink Logo"
+          width={100}
+          height={100}
+          className="m-auto mb-10"
+          priority
+        />
+        <p className="text-[20px] font-semibold mb-8 self-start">
+          Register as a ?
+        </p>
 
-      {/* ✅ Button to go to /register */}
-      <Link
-        href="/register"
-        className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition"
-      >
-        Yaha Aysha wala Paste ho ga code Ap please yaha click kr k next jaye
-      </Link>
+        <div className="flex flex-col gap-6">
+          <button
+            onClick={() => router.push("/register")}
+            className="bg-[#2f4f4f] hover:bg-[#1f3838] text-white text-lg font-medium py-3 px-30 rounded-lg shadow-md transition-all duration-300"
+          >
+            Seller
+          </button>
+          <button
+            onClick={() => router.push("/register/buyer")}
+            className="bg-[#2f4f4f] hover:bg-[#1f3838] text-white text-lg font-medium py-3 px-30 rounded-lg shadow-md transition-all duration-300"
+          >
+            Buyer
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

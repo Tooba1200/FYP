@@ -7,17 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/app/register/components/ui/header";
 import Select from "react-select";
 
-export default function StepCompany({ nextStep, prevStep }) {
-  const [form, setForm] = useState({
-    logo: null,
-    mainImage: null,
-    companyName: "",
-    location: "",
-    city: { value: "Faisalabad", label: "Faisalabad" },
-    country: { value: "Pakistan", label: "Pakistan" },
-    website: "",
-  });
-  const [touched, setTouched] = useState({});
+export default function StepCompany({ nextStep, prevStep,form,setForm,touched,setTouched }) {
 
   // ✅ Validation checks
   const isCompanyValid = form.companyName.trim().length >= 2;

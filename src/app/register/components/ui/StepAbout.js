@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "./header";
-export default function StepAbout({ nextStep, prevStep }) {
-  const [form, setForm] = useState({ about: "" });
-  const [touched, setTouched] = useState({});
+
+export default function StepAbout({ nextStep, prevStep,form,setForm,touched,setTouched }) {
   const isValid = form.about.trim().length >= 10; // min 10 chars
   const allValid = isValid;
 
